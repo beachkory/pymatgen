@@ -489,7 +489,7 @@ class Lattice(MSONable):
         return 7
 
     def __str__(self):
-        return "\n".join([" ".join(["%.6f" % i for i in row])
+        return "\n".join([" ".join(["%.10f" % i for i in row])
                           for row in self._matrix])
 
     def as_dict(self, verbosity=0):

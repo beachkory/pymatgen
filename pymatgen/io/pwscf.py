@@ -162,7 +162,7 @@ class PWInput(object):
                                    key=lambda i: i[0]):
                     if v == site.properties:
                         name = k
-                out.append("  %s %.6f %.6f %.6f" % (name, site.a, site.b, site.c))
+                out.append("  %s %.10f %.10f %.10f" % (name, site.a, site.b, site.c))
 
         out.append("K_POINTS %s" % self.kpoints_mode)
         kpt_str = ["%s" % i for i in self.kpoints_grid]
@@ -170,7 +170,7 @@ class PWInput(object):
         out.append("  %s" % " ".join(kpt_str))
         out.append("CELL_PARAMETERS angstrom")
         for vec in self.structure.lattice.matrix:
-            out.append("  %f %f %f" % (vec[0], vec[1], vec[2]))
+            out.append("  %.10f %.10f %.10f" % (vec[0], vec[1], vec[2]))
         return "\n".join(out)
 
     def write_file(self, filename):
