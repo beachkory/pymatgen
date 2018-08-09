@@ -153,7 +153,7 @@ class PWInput(object):
         out.append("ATOMIC_POSITIONS crystal")
         if self.pseudo is not None:
             for site in self.structure:
-                out.append("  %s %.6f %.6f %.6f" % (site.specie.symbol, site.a,
+                out.append("  %s %.10f %.10f %.10f" % (site.specie.symbol, site.a,
                                                     site.b, site.c))
         else:
             for site in self.structure:
